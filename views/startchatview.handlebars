@@ -1,0 +1,33 @@
+		<div class="join-container">
+			
+			<main class="join-main">
+				<form action="/forums/chat" method="get">
+				<fieldset>
+   				 <legend>Input your username to join:</legend>
+					<div class="form-control">
+						<label for="username">Username</label><br>
+						<input
+							type="text"
+							name="username"
+							id="username"
+							placeholder="Enter username..."
+							required
+						/>
+						<label for="room"></label>
+						<input
+							type="hidden"
+							name="room"
+							id="room"
+                            value = "{{topic}}"
+							required
+						/>
+						
+					</div>
+					</fieldset>
+					<div>
+					<br>
+					<button type="submit" class="btn">Join Chat</button>
+					</div>
+				</form>
+			</main>
+		</div>

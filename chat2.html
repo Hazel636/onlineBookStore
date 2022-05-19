@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatCord App</title>
+  </head>
+  <body>
+    <div class="chat-container">
+        <div id = "messages"></div>
+      <div class="chat-form-container">
+        <form id="chat-form">
+          <input
+            id="msg"
+            type="text"
+            placeholder="Enter Message"
+            required
+            autocomplete="off"
+          />
+          <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const form = document.getElementById('chat-form');
+        const input = document.getElementById('msg');
+        const { username, room } = Qs.parse(location.search, {
+          ignoreQueryPrefix:true
+        });
+      
+        const socket = io();
+        console.log(room);
+        socket.emit('joinRoom',{ username,room });
+
+        socket.on('message',message =>{
+            console.log(message);
+            
+            	var item = document.createElement('div');
+              var now = new Date();
+              item.innerText = message.username;
+              item.innerHTML +=  message.text;
+              item.textContent = message.username + ": " +message.text;
+              item.innerHTML += now;
+            	//item.textContent = message;
+            	messages.appendChild(item);
+            	window.scrollTo(0,document.body.scrollHeight);
+            
+        });
+
+        form.addEventListener('submit',function(e){
+	        e.preventDefault();
+	        if(input.value){
+	      	socket.emit('chatMessage',input.value);
+	      	input.value = '';
+	      }
+});
+
+
+
+
+    </script>
+  </body>
+</html>

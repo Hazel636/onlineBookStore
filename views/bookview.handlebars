@@ -1,0 +1,25 @@
+<div style = "font-family:Arial ">
+<h2>BOOK LIST</h2>
+
+<table border=1px style="background-color:aliceblue ">
+    <tr>
+        <th> ID </th>
+        <th> Title </th>
+        <th> Inventory </th>
+        <th> chatroom </th>
+    </tr>
+    {{#each docs}}
+    <tr>
+        <td>{{this.id}}</td>
+        <td>{{this.title}}</td>
+        <td>{{this.inventory_count}}</td>
+        <td><a href="http://localhost:8889{{this.chatroom}}">Forum of {{this.title}}</a></td>
+    </tr>
+    {{/each}}
+</table>
+
+
+
+</div>
+
+

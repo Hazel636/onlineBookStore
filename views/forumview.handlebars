@@ -1,0 +1,14 @@
+<div style = "padding:30px ; font-family:Arial ">
+
+<h2>FORUM LIST</h2>
+
+<table border=1px style="background-color:aliceblue ">
+    <tr>
+        <th>Forum</th>
+    </tr>
+    {{#each docs}}
+    <tr>
+        <td><a href="http://localhost:8889{{this.chatroom}}">{{this.title}}</a></td>
+    </tr>
+    {{/each}}
+</table>

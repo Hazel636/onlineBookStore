@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+/* Style the header */
+header {
+  background-color: #6699CC;
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  
+  float: left;
+  width: 18%;
+
+ 
+  background: #99CCFF;
+  padding: 30px;
+  margin-right: 180px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  padding: 0;
+}
+
+article {
+  float: center;
+  padding: 50px;
+  width: 70%;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #6699CC;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+a:link{color: #6699CC; font-size: 21px; text-decoration:none; padding-left: 20px;}
+a:visited{color: #336699;text-decoration:none;}
+a:hover{color: #29962A;text-decoration:none;}
+a:active{color: burlywood;text-decoration:none;}
+
+li{margin-top: 15px; background-color: aliceblue;list-style: none;}
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h2>Welcome to Library</h2>
+</header>
+
+<section>
+  <nav>
+   <div id="container">
+</style>
+</head>
+<div style="height: 20px; "><a href="/">Home</a></div>
+
+<ul>
+    <li><a href="/user">user list</a></li>
+    <li><a href="/user/createuser">create user</a></li>
+    <li><a href="/user/searchuser">search user</a></li>
+    <li><a href="/user/deleteuser">delete user</a></li>
+    <li><a href="/user/updateuser">update user</a></li>
+</ul>
+
+
+<ul>
+    <li><a href="/book">book list</a></li>
+    <li><a href="/book/createbook">create book</a></li>
+    <li><a href="/book/searchbook">search book</a></li>
+    <li><a href="/book/deletebook">delete book</a></li>
+    <li><a href="/book/updatebook">update book</a></li>
+</ul>
+
+
+
+    <ul>
+        <li><a href="/user/borrowbook">borrow book</a></li>
+        <li><a href="/user/returnbook">return book</a></li>
+        <li><a href="/user/borrowinfo">borrow info</a></li>
+        
+    </ul>
+
+
+  </nav>
+  
+  <article>
+ <div style="height: 100px; margin-top:50px">{{{body}}}</div>
+  </article>
+</section>
+
+<footer>
+  <p>ITEC 4020 N</p>
+</footer>
+
+</body>
+</html>

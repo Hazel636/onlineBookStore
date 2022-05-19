@@ -1,0 +1,20 @@
+<div style = " font-family:Arial ">
+<h2>USER LIST</h2>
+
+<table border=1px style="background-color:aliceblue ">
+    <tr>
+        <th>Username</th>
+        <th>Phone</th>
+        <th>Borrow Limit</th>
+        <th>Borrowed Book</th>
+    </tr>
+    {{#each docs}}
+    <tr>
+        <td>{{this.username}}</td>
+        <td>{{this.phone}}</td>
+        <td>{{this.borrowlimit}}</td>
+        <td>{{this.borrowedBook}}</td>
+    </tr>
+    {{/each}}
+</table>
+
